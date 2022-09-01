@@ -24,6 +24,12 @@ app.get("/pokemons/", (req, res) => {
 
 // NEW
 // DELETE
+app.delete("/pokemons/:idOfPokemon", (req, res) => {
+  //remove the Pokemon object from the array
+  pokemons.splice(req.params.idPokemonIndex, 1),
+    res.redirect("/pokemons")
+})
+
 // UPDATE
 // CREATE
 // EDIT
