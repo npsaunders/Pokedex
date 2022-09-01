@@ -31,8 +31,27 @@ app.delete("/pokemons/:idOfPokemon", (req, res) => {
 })
 
 // UPDATE
+app.put("/pokemons/:idOfPokemon", (req, res) => {
+  //:idOfPokemon is the index of our fruits array that we want to change
+  //Set that element to the value of req.body (the input data)
+  pokemons[req.params.idOfPokemon] = req.body;
+  res.redirect("/pokemons") //redirect to the index page
+})
+
 // CREATE
+
 // EDIT
+app.get("/pokemons/:idOfPokemon/edit", (req, res) => {
+  res.render("edit_pokemon.ejs",
+    {
+      //pass in an object that contains
+      pokemon: pokemons[req.params.idOfPokemon], //the pokemon object
+      index: req.params.idOfPokemon, //... and its index in the array
+      tabTitle: "Edit"
+    }
+  )
+})
+
 // SHOW
 app.get("/pokemons/:idPokemonIndex", (req, res) => {
   res.render("show_pokemon.ejs", {
