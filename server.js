@@ -16,6 +16,12 @@ app.use(methodOverride("_method"));
 // ----- ROUTES -----
 
 // INDEX
+app.get("/pokemons/", (req, res) => {
+  res.render("index_pokemon.ejs", {
+    tabTitle: "Index"
+  })
+})
+
 // NEW
 // DELETE
 // UPDATE
