@@ -28,6 +28,12 @@ app.get("/pokemons/", (req, res) => {
 // CREATE
 // EDIT
 // SHOW
+app.get("/pokemons/:idPokemonIndex", (req, res) => {
+  res.render("show_pokemon.ejs", {
+    pokemon: pokemons[req.params.idPokemonIndex],
+    tabTitle: "Show"
+  })
+})
 
 
 // ----- Listener -----
