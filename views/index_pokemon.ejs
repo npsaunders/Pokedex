@@ -23,18 +23,21 @@
                 <img src=<%=pokemons[i].img%> width="75" />
                 <%= pokemons[i].name %>
               </a>
-            </div>
-            <!--- DELETE BUTTON --->
-            <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
-              <div id="delete">
-                <input type="submit" value="X" />
-              </div>
-            </form>
+              <!--- DELETE BUTTON --->
+              <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
+                <div id="delete">
+                  <input type="submit" value="Delete" />
 
-            <!---- EDIT ---->
-            <a href="/pokemons/<%=i%>/edit">Edit</a>
+                  <!---- EDIT ---->
+                  <a href="/pokemons/<%=i%>/edit">edit
+                </div>
+            </div>
+
             <% } %>
-        </ul>
+  </div>
+  </div>
+  </form>
+  </ul>
   </div>
   </div>
   </main>
