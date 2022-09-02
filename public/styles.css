@@ -1,0 +1,38 @@
+body {
+  display: flexbox;
+  background-color: aquamarine;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  display: flex;
+}
+img {
+  margin: auto;
+}
+
+#delete > input {
+  font-size: 30px;
+  padding: 0;
+  color: red;
+}
+
+idxImgs {
+  display: inline-block;
+  width: 100px;
+}
+
+.container {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.container > #newPoke {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 0 5px;
+}

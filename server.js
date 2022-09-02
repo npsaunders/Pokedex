@@ -14,6 +14,11 @@ app.use(methodOverride("_method"));
 
 
 // ----- ROUTES -----
+// redirfect to main page
+app.get('/', (req, res) => {
+  res.redirect("/pokemons")
+})
+
 
 // INDEX
 app.get("/pokemons/", (req, res) => {
@@ -47,6 +52,7 @@ app.put("/pokemons/:idOfPokemon", (req, res) => {
 
 // CREATE
 app.post("/pokemons", (req, res) => {
+  res.send(req.body)
   pokemons.push(req.body)
   res.redirect("/pokemons")
 })
@@ -67,7 +73,7 @@ app.get("/pokemons/:idOfPokemon/edit", (req, res) => {
 app.get("/pokemons/:idPokemonIndex", (req, res) => {
   res.render("show_pokemon.ejs", {
     pokemon: pokemons[req.params.idPokemonIndex],
-    tabTitle: "Show"
+    tabTitle: "Show",
   })
 })
 

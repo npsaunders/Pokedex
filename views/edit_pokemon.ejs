@@ -15,8 +15,65 @@
       <main>
         <div>
           <form action="/pokemons/<%=index%>?_method=PUT" method="POST">
-            <input type="text" name="name" value="<%=pokemon.name%>" required /><br />
-            <input type="submit" name="" value="Submit Changes" />
+            <!-- Name -->
+            <div class="row">
+              <div class="three columns">
+                <label for="pokemonName">Pokemon Name</label>
+                <input class="u-full-width" type="text" name="name" value=<%=pokemon.name%>>
+              </div>
+            </div>
+            <!-- Image URL -->
+            <div class="row">
+              <div class="three columns">
+                <label for="pokemonImgUrl">Image Source URL</label>
+                <input type="url" class="u-full-width" name="img" value=<%=pokemon.img%>>
+              </div>
+            </div>
+            <!-- Type -->
+            <div class="row">
+              <div class="two columns">
+                <label for="pokemonType">Type 1</label>
+                <input class="u-full-width" type="text" name="type" value="<%=pokemon.type[0]%>">
+              </div>
+              <div class="two columns">
+                <label for="pokemonType">Type 2</label>
+                <input class="u-full-width" type="text" name="type" value="<%=pokemon.type[1]%>">
+              </div>
+              <div class="two columns">
+                <label for="pokemonType">Type 3</label>
+                <input class="u-full-width" type="text" name="type" value="<%=pokemon.type[2]%>">
+              </div>
+            </div>
+            <div class=" row">
+              <div class="six columns">
+                <h5 id="form">Stats</h5>
+              </div>
+            </div>
+            <!-- stats hp -->
+            <div class="row">
+              <div class="one columns">
+                <label for="stats: hp">hp</label>
+                <input class="u-full-width" type="text" name="stats" value=<%=pokemon.stats.hp%>>
+              </div>
+              <!-- stats Attack -->
+              <div class=" one columns">
+                <label for="stats: attack">attack</label>
+                <input class="u-full-width" type="text" name="stats" value=<%=pokemon.stats.attack%>>
+              </div>
+              <!-- stats defense -->
+              <div class="one columns">
+                <label for="stats: defense">defense</label>
+                <input class="u-full-width" type="text" name=<%pokemon.stats.defense%> value=<%=pokemon.stats.defense%>>
+              </div>
+            </div>
+            <div class="row">
+              <div class="four columns">
+                <input class="button-primary" type="submit" value="Submit">
+                <div class="four columns">
+                  <a id="returnIndex" class="button button-primary" href="/pokemons">Cancel</a>
+                </div>
+              </div>
+            </div><br />
           </form>
         </div>
       </main>

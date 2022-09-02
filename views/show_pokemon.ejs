@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <%- include('./partials/head.ejs')%>
@@ -11,16 +11,45 @@
     <%- include('./partials/header.ejs')%>
       <!-- ============ MAIN ============ -->
       <main>
-        <div>
+        <div class="container">
           <h1>
             <%=pokemon.name%>
           </h1>
-          <img src=<%=pokemon.img%> alt="<%=pokemon.name%>" />
-        </div>
+          <!-- BACK -->
+          <a id="returnIndex" class="button button-primary" href="/pokemons">Back</a>
+        </div><br />
+
+
+        <img src=<%=pokemon.img%> alt="<%=pokemon.name%>" />
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  types: <%=pokemon.type%>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  hp: <%=pokemon.stats.hp%>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  attack: <%-pokemon.stats.attack%>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  defense: <%-pokemon.stats.defense%>
+                </td>
+              </tr>
+            </tbody>
+          </table>
       </main>
-      <!-- ============ FOOTER ============ -->
-      <%- include('./partials/footer.ejs')%>
   </div>
+  </main>
+  <!-- ============ FOOTER ============ -->
+  <%- include('./partials/footer.ejs')%>
 </body>
 
 </html>
