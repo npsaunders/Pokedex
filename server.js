@@ -52,7 +52,6 @@ app.put("/pokemons/:idOfPokemon", (req, res) => {
 
 // CREATE
 app.post("/pokemons", (req, res) => {
-  res.send(req.body)
   pokemons.push(req.body)
   res.redirect("/pokemons")
 })
