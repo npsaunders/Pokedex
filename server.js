@@ -23,6 +23,12 @@ app.get("/pokemons/", (req, res) => {
 })
 
 // NEW
+app.get("/pokemons/new", (req, res) => {
+  res.render("new_pokemon.ejs", {
+    tabTitle: "New"
+  })
+})
+
 // DELETE
 app.delete("/pokemons/:idOfPokemon", (req, res) => {
   //remove the Pokemon object from the array
@@ -39,6 +45,10 @@ app.put("/pokemons/:idOfPokemon", (req, res) => {
 })
 
 // CREATE
+app.post("/pokemons", (req, res) => {
+  pokemons.push(req.body)
+  res.redirect("/pokemons")
+})
 
 // EDIT
 app.get("/pokemons/:idOfPokemon/edit", (req, res) => {

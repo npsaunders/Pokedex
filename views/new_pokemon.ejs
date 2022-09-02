@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
+
+<body>
+  <div class="body-overlay">
+    <!-- ============ HEADER ============ -->
+    <%- include('./partials/header.ejs')%>
+      <!-- ============ MAIN ============ -->
+      <h1>New Pokemon
+      </h1>
+      <main>
+        <div>
+          <form action="/pokemons" method="POST">
+            <input type="text" name="name" value="" required /><br />
+            <input type="submit" name="" value="Create Pokemon" />
+          </form>
+        </div>
+      </main>
+      <!-- ============ FOOTER ============ -->
+      <%- include('./partials/footer.ejs')%>
+  </div>
+</body>
+
+</html>
