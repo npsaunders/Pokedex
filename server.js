@@ -18,6 +18,7 @@ app.use(methodOverride("_method"));
 // INDEX
 app.get("/pokemons/", (req, res) => {
   res.render("index_pokemon.ejs", {
+    pokemon: pokemons,
     tabTitle: "Index"
   })
 })
@@ -32,7 +33,7 @@ app.get("/pokemons/new", (req, res) => {
 // DELETE
 app.delete("/pokemons/:idOfPokemon", (req, res) => {
   //remove the Pokemon object from the array
-  pokemons.splice(req.params.idPokemonIndex, 1),
+  pokemons.splice(req.params.idOfPokemon, 1),
     res.redirect("/pokemons")
 })
 

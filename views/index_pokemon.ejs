@@ -19,12 +19,13 @@
             <% for(let i=0; i < pokemons.length; i++) { %>
               <li><a href="/pokemons/<%=i%>">
                   <%= pokemons[i].name %>
-                </a></li>
-              <!-- DELETE BUTTON -->
-              <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE" />
-              </form>
-              <!-- EDIT -->
+                </a>
+                <!--- DELETE BUTTON --->
+                <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
+                  <input type="submit" value="DELETE" />
+                </form>
+              </li>
+              <!---- EDIT ---->
               <a href="/pokemons/<%=i%>/edit">Edit</a>
               <% } %>
           </ul>
