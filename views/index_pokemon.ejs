@@ -6,44 +6,38 @@
 </head>
 
 <body>
-  <div class="body-overlay">
-    <!-- ============ HEADER ============ -->
-    <%- include('./partials/header.ejs')%>
-      <!-- ============ MAIN ============ -->
-      <main>
-        <div class="container">
-          <h1>Pokemons</h1>
-          <!-- NEW --><a id="newPoke" class="button button-primary" href="/pokemons/new">New
-            Pokemon</a>
-        </div><br />
-        <ul>
-          <% for(let i=0; i < pokemons.length; i++) { %>
-            <div class="idxImgs">
-              <a href="/pokemons/<%=i%>">
-                <img src=<%=pokemons[i].img%> width="75" />
-                <%= pokemons[i].name %>
-              </a>
-              <!--- DELETE BUTTON --->
-              <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
-                <div id="delete">
+  <!-- ============ HEADER ============ -->
+  <%- include('./partials/header.ejs')%>
+    <!-- ============ MAIN ============ -->
+    <main>
+      <div class="h1Cont">
+        <h1>Pokemons</h1>
+        <!-- NEW -->
+        <a id="newPoke" class="button button-primary" href="/pokemons/new">New
+          Pokemon</a>
+        <br />
+      </div>
+      <div class="container">
+        <% for(let i=0; i < pokemons.length; i++) { %>
+          <div>
+            <a href="/pokemons/<%=i%>">
+              <img src=<%=pokemons[i].img%> class="thumbnail"/></a>
+
+            <!--- DELETE BUTTON --->
+            <div class="form" <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
+              <%= pokemons[i].name %>
+                </br>
+                <div container="buttons">
                   <input type="submit" value="Delete" />
-
                   <!---- EDIT ---->
-                  <a href="/pokemons/<%=i%>/edit">edit
+                  <a id="editBut" href="/pokemons/<%=i%>/edit">edit</a>
                 </div>
+                </form>
             </div>
-
-            <% } %>
-  </div>
-  </div>
-  </form>
-  </ul>
-  </div>
-  </div>
-  </main>
-  <!-- ============ FOOTER ============ -->
-  <%- include('./partials/footer.ejs')%>
-    </div>
+          </div>
+          <% } %>
+      </div>
+    </main>
 </body>
 
 </html>

@@ -1,38 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  display: flexbox;
   background-color: aquamarine;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+}
+
+/* header */
+.h1Cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  text-align: center;
+  font-size: 50px;
 }
 
-table {
-  display: flex;
-}
-img {
-  margin: auto;
-}
-
-#delete > input {
-  font-size: 15px;
-  padding: 0;
-  color: red;
-}
-
-idxImgs {
-  display: inline-block;
-  width: 100px;
-}
+/* Container */
 
 .container {
   display: flex;
-  margin-left: 50px;
-  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.container > #newPoke {
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 0 5px;
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 25px;
+  margin: 30px 15px 5px 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+#editBut {
+  appearance: auto;
+  text-align: center;
+  background-color: buttonface;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial;
+  text-decoration: none;
+}
+.thumbnail {
+  top: -50px;
+  left: -35px;
+  display: block;
+  z-index: 999;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+}
+
+/*change the number below to scale to the appropriate size*/
+.thumbnail:hover {
+  transform: scale(2);
 }
