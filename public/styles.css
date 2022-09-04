@@ -4,7 +4,7 @@
 
 body {
   background-color: aquamarine;
-  margin: auto;
+  margin: 0 auto;
   padding: 0;
   width: 90%;
 }
@@ -14,6 +14,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: aquamarine;
 }
 
 h1 {
@@ -30,6 +35,9 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+  margin-top: 300px;
+  z-index: 1;
 }
 
 img {
@@ -37,6 +45,7 @@ img {
   width: 150px;
   border-radius: 25px;
   margin: 30px 15px 5px 15px;
+  z-index: 15;
 }
 
 .form {
