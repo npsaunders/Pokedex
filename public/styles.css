@@ -16,7 +16,7 @@ body {
   align-items: center;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 90%;
   z-index: 3;
   background-color: aquamarine;
 }
@@ -71,4 +71,10 @@ img {
 /*change the number below to scale to the appropriate size*/
 .thumbnail:hover {
   transform: scale(2);
+}
+
+/* Show page */
+.showText {
+  font-size: 20px;
+  font-weight: 700;
 }
